@@ -7,18 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18375B6F2BD8E2180017414E /* EarthquakeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18375B6E2BD8E2180017414E /* EarthquakeDetail.swift */; };
+		18375B712BD8FFD40017414E /* EarthquakeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18375B702BD8FFD40017414E /* EarthquakeRow.swift */; };
 		18750DAF2BD80C9B00D6876C /* gandizhenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18750DAE2BD80C9B00D6876C /* gandizhenApp.swift */; };
 		18750DB12BD80C9B00D6876C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18750DB02BD80C9B00D6876C /* ContentView.swift */; };
 		18750DB32BD80C9C00D6876C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18750DB22BD80C9C00D6876C /* Assets.xcassets */; };
 		18750DB62BD80C9C00D6876C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18750DB52BD80C9C00D6876C /* Preview Assets.xcassets */; };
+		18750DBE2BD80D5700D6876C /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = 18750DBD2BD80D5700D6876C /* Kanna */; };
+		18750DC12BD8132A00D6876C /* CurrentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18750DC02BD8132A00D6876C /* CurrentView.swift */; };
+		18750DC32BD8133C00D6876C /* HistoryVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18750DC22BD8133C00D6876C /* HistoryVIew.swift */; };
+		18750DC62BD814F000D6876C /* HistoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18750DC52BD814F000D6876C /* HistoryData.swift */; };
+		18750DC82BD816A700D6876C /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18750DC72BD816A700D6876C /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18375B6E2BD8E2180017414E /* EarthquakeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeDetail.swift; sourceTree = "<group>"; };
+		18375B702BD8FFD40017414E /* EarthquakeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeRow.swift; sourceTree = "<group>"; };
 		18750DAB2BD80C9B00D6876C /* gandizhen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gandizhen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18750DAE2BD80C9B00D6876C /* gandizhenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gandizhenApp.swift; sourceTree = "<group>"; };
 		18750DB02BD80C9B00D6876C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		18750DB22BD80C9C00D6876C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18750DB52BD80C9C00D6876C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		18750DC02BD8132A00D6876C /* CurrentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentView.swift; sourceTree = "<group>"; };
+		18750DC22BD8133C00D6876C /* HistoryVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVIew.swift; sourceTree = "<group>"; };
+		18750DC52BD814F000D6876C /* HistoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryData.swift; sourceTree = "<group>"; };
+		18750DC72BD816A700D6876C /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18750DBE2BD80D5700D6876C /* Kanna in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +65,8 @@
 		18750DAD2BD80C9B00D6876C /* gandizhen */ = {
 			isa = PBXGroup;
 			children = (
+				18750DC42BD814C900D6876C /* API */,
+				18750DBF2BD8131300D6876C /* VIew */,
 				18750DAE2BD80C9B00D6876C /* gandizhenApp.swift */,
 				18750DB02BD80C9B00D6876C /* ContentView.swift */,
 				18750DB22BD80C9C00D6876C /* Assets.xcassets */,
@@ -65,6 +81,26 @@
 				18750DB52BD80C9C00D6876C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		18750DBF2BD8131300D6876C /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				18750DC02BD8132A00D6876C /* CurrentView.swift */,
+				18750DC22BD8133C00D6876C /* HistoryVIew.swift */,
+				18375B6E2BD8E2180017414E /* EarthquakeDetail.swift */,
+				18375B702BD8FFD40017414E /* EarthquakeRow.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		18750DC42BD814C900D6876C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				18750DC52BD814F000D6876C /* HistoryData.swift */,
+				18750DC72BD816A700D6876C /* DataModel.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +119,9 @@
 			dependencies = (
 			);
 			name = gandizhen;
+			packageProductDependencies = (
+				18750DBD2BD80D5700D6876C /* Kanna */,
+			);
 			productName = gandizhen;
 			productReference = 18750DAB2BD80C9B00D6876C /* gandizhen.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +150,9 @@
 				Base,
 			);
 			mainGroup = 18750DA22BD80C9B00D6876C;
+			packageReferences = (
+				18750DBC2BD80D5700D6876C /* XCRemoteSwiftPackageReference "Kanna" */,
+			);
 			productRefGroup = 18750DAC2BD80C9B00D6876C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +180,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				18750DB12BD80C9B00D6876C /* ContentView.swift in Sources */,
+				18375B712BD8FFD40017414E /* EarthquakeRow.swift in Sources */,
+				18750DC32BD8133C00D6876C /* HistoryVIew.swift in Sources */,
+				18750DC12BD8132A00D6876C /* CurrentView.swift in Sources */,
+				18750DC62BD814F000D6876C /* HistoryData.swift in Sources */,
 				18750DAF2BD80C9B00D6876C /* gandizhenApp.swift in Sources */,
+				18375B6F2BD8E2180017414E /* EarthquakeDetail.swift in Sources */,
+				18750DC82BD816A700D6876C /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +392,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		18750DBC2BD80D5700D6876C /* XCRemoteSwiftPackageReference "Kanna" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tid-kijyun/Kanna.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		18750DBD2BD80D5700D6876C /* Kanna */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18750DBC2BD80D5700D6876C /* XCRemoteSwiftPackageReference "Kanna" */;
+			productName = Kanna;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 18750DA32BD80C9B00D6876C /* Project object */;
 }
