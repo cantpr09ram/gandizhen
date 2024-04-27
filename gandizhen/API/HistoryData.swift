@@ -20,7 +20,7 @@ class HistoryViewModel: ObservableObject {
             self.errorMessage = "Invalid URL"
             return
         }
-        var apikey = "YOUR_API_KEY"
+        let apikey = "CWB-C1B7677A-1F07-4D83-8DE0-A89EBF7C4258"
         var request = URLRequest(url: url, timeoutInterval: Double.infinity)
         request.addValue(apikey, forHTTPHeaderField: "Authorization")
         request.httpMethod = "GET"
@@ -44,7 +44,7 @@ class HistoryViewModel: ObservableObject {
                     let result = try decoder.decode(EarthquakeData.self, from: data)
                     print("hi")
                     self.earthquakes = result.records.Earthquake
-                    print(self.earthquakes)
+                    //print(self.earthquakes)
                     self.errorMessage = nil
                 } catch {
                     self.errorMessage = "Error decoding JSON: \(error)"

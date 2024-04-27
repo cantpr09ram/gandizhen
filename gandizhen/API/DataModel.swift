@@ -74,10 +74,10 @@ struct Intensity: Codable {
 }
 
 struct ShakingArea: Codable, Identifiable {
-    var id: String
-    let AreaDesc, AreaIntensity: String
+    let id = UUID()  // Generates a unique identifier
+    let AreaDesc, AreaIntensity, CountryName: String
     enum CodingKeys: String, CodingKey {
-        case id = "CountyName"
+        case CountryName = "CountyName"
         case AreaDesc = "AreaDesc"
         case AreaIntensity = "AreaIntensity"
         

@@ -48,28 +48,48 @@ struct EarthquakeDetail: View {
             }
             .padding(EdgeInsets(top: -10, leading: 20, bottom: 5, trailing: 20))
             
-            Map(position: $cameraPosition){
-                Marker("", coordinate: CLLocationCoordinate2D(latitude: earthquake.EarthquakeInfo.Epicenter.EpicenterLatitude, longitude: earthquake.EarthquakeInfo.Epicenter.EpicenterLongitude))
-            }
-            .padding(EdgeInsets(top: 0, leading: 20, bottom: 5, trailing: 20))
-            .frame(height: 350)
-            .onAppear {
-                let center  = CLLocationCoordinate2D(latitude: earthquake.EarthquakeInfo.Epicenter.EpicenterLatitude, longitude: earthquake.EarthquakeInfo.Epicenter.EpicenterLongitude)
-                let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
-                let centerRegion = MKCoordinateRegion(center: center, span: span)
-                cameraPosition = .region(centerRegion)
+            ZStack {
+                
+                Map(position: $cameraPosition){
+                    Marker("", coordinate: CLLocationCoordinate2D(latitude: earthquake.EarthquakeInfo.Epicenter.EpicenterLatitude, longitude: earthquake.EarthquakeInfo.Epicenter.EpicenterLongitude))
+                }
+                .padding(EdgeInsets(top: 0, leading: 20, bottom: 5, trailing: 20))
+                .frame(height: 350)
+                
+                .onAppear {
+                    let center  = CLLocationCoordinate2D(latitude: earthquake.EarthquakeInfo.Epicenter.EpicenterLatitude, longitude: earthquake.EarthquakeInfo.Epicenter.EpicenterLongitude)
+                    let span = MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
+                    let centerRegion = MKCoordinateRegion(center: center, span: span)
+                    cameraPosition = .region(centerRegion)
+                }
+                Rectangle()
+                    .fill(.red.opacity(0.01))
+                    .frame(width: 350, height: 350)
+                    .onTapGesture {
+                        print("真的可以按")
+                    }
             }
             
             VStack(alignment: .leading) {
                 Text("Intensity")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                //Text("\(earthquake.Intensity.ShakingArea.count)")
-                List(earthquake.Intensity.ShakingArea) { shakingarea in
-                    Text("\(shakingarea.AreaDesc)")
+                //let num1 = Int(earthquake.Intensity.ShakingArea.count)
+                ForEach(Array(earthquake.Intensity.ShakingArea.enumerated()), id: \.offset) { index, shakingArea in
+                    if (shakingArea.AreaDesc.count <= 5) {
+                        HStack {
+                            Text(shakingArea.AreaDesc)
+                                .font(.headline)
+                            Spacer()
+                            Text(shakingArea.AreaIntensity)
+                            Spacer()
+                            Text(shakingArea.CountryName)
+                        }
+                    }
                 }
             }
-            .padding(EdgeInsets(top: 0, leading: 20, bottom: 5, trailing: 20))
+            .padding(EdgeInsets(top: 0, leading: 20, bottom: 5, trailing: 40))
+            
         }
     }
 }

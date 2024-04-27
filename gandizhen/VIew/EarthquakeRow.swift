@@ -34,6 +34,7 @@ struct EarthquakeRow: View {
                     .font(.caption2)
                 
             }
+            Spacer()
             Text("\(String(format: "%.0f", earthquake.EarthquakeInfo.EarthquakeMagnitude.MagnitudeValue))")
                 .font(.system(size: 60))
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
