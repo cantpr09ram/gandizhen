@@ -51,10 +51,10 @@ struct CurrentView: View {
                                 VStack (alignment: .trailing) {
                                     Text(String(format: "%.0f",
                                                 distance(
-                                                    centerlongitude: viewModel.earthquakes[0].EarthquakeInfo.Epicenter.EpicenterLatitude,
-                                                    centerlatitude: viewModel.earthquakes[0].EarthquakeInfo.Epicenter.EpicenterLongitude,
-                                                    nowlongitude: locationDataManager.locationManager.location?.coordinate.longitude.magnitude ?? 0.0,
-                                                    nowlatitude: locationDataManager.locationManager.location?.coordinate.latitude.magnitude ?? 0.0
+                                                    centerLongitude: viewModel.earthquakes[0].EarthquakeInfo.Epicenter.EpicenterLongitude,
+                                                    centerLatitude: viewModel.earthquakes[0].EarthquakeInfo.Epicenter.EpicenterLatitude,
+                                                    nowLongitude: locationDataManager.locationManager.location?.coordinate.longitude.magnitude ?? 0.0,
+                                                    nowLatitude: locationDataManager.locationManager.location?.coordinate.latitude.magnitude ?? 0.0
                                                 )
                                             )
                                     )
@@ -97,11 +97,10 @@ struct CurrentView: View {
     }
 }
 
-func distance (centerlongitude: Double, centerlatitude: Double, nowlongitude: Double, nowlatitude: Double) -> Double{
-    let location1 = CLLocation(latitude: centerlatitude, longitude: centerlatitude)
-    let location2 = CLLocation(latitude: nowlatitude, longitude: nowlongitude)
-    print(location1.distance(from: location2))
-    return location1.distance(from: location2) / 1000  // returns distance in meters
+func distance(centerLongitude: Double, centerLatitude: Double, nowLongitude: Double, nowLatitude: Double) -> Double {
+    let location1 = CLLocation(latitude: centerLatitude, longitude: centerLongitude)
+    let location2 = CLLocation(latitude: nowLatitude, longitude: nowLongitude)
+    return location1.distance(from: location2) / 1000  // returns distance in kilometers
 }
 
 #Preview {
